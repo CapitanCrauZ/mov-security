@@ -1,0 +1,12 @@
+{% extends "base/index.html" %}
+
+
+{% block main %}
+<div class="container">
+    <section class="8">
+        <h1>Bienvenido {{user.username}}</h1>
+        <a href="/menu/">Cerrar Sesión</a>
+        <a href="/auto/">Gestionar Autos</a>
+    </section>
+</div>
+{% endblock main %}

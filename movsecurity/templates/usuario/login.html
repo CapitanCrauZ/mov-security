@@ -1,0 +1,20 @@
+{% extends "base/index.html" %}
+
+
+{% block main %}
+<div class="container">
+    <div class="div_section_login">
+        <div class="div_login">
+
+            <form action="" method="POST" class="formulario">
+                {% csrf_token %}
+                {{ formulario }}
+                <input type="submit" value="Enviar" class="btn_enviar">
+                <a href="registro/" class="a_registrar">¿No tienes Cuenta? Registrate aquí</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock main %}
