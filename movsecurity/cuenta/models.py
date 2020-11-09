@@ -12,3 +12,4 @@ class TipoUsuario(models.Model):
 class PerfilUsuario(models.Model):
     tipoUsuario = models.ForeignKey(TipoUsuario, on_delete=models.CASCADE)
     usuario = models.OneToOneField(User, on_delete=models.CASCADE, blank=True)
+    

@@ -1,20 +1,48 @@
 {% extends "base/index.html" %}
 
 
-{% block main %}
-<div class="container">
+
+<!--<div class="container">
     <div class="div_section_login">
         <div class="div_login">
 
             <form action="" method="POST" class="formulario">
                 {% csrf_token %}
                 {{ formulario }}
-                <input type="submit" value="Enviar" class="btn_enviar">
-                <a href="registro/" class="a_registrar">¿No tienes Cuenta? Registrate aquí</a>
+                <input type="submit" value="Entrar" class="btn_enviar">
+                <a href="registro/">Registrarse</a>
             </form>
 
         </div>
     </div>
-</div>
+</div>-->
+    
 
+<!---->
+
+{% block main %}
+<div class="card text-center">
+    <div class="card-header">
+        Iniciar Sesión
+    </div>
+    <div class="card-body">
+        <form action="" method="POST" class="formulario">
+            {% csrf_token %}
+            <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+    </div>
+    <div class="card-footer text-muted">
+    </div>
+  </div>
+ 
 {% endblock main %}

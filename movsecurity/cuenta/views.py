@@ -60,9 +60,55 @@ def salir(request):
 
 
 def perfil(request):
-    if request.user.is_authenticated:
-        return render(
-            request,
-            'usuario/perfil.html'
-        )
-    return redirect('cuenta/')
+    #if request.user.is_authenticated:
+    return render(
+        request,
+        'usuario/perfil.html'
+    )
+    #return redirect('cuenta/')
+
+def camaras(request):
+    return render(
+        request,
+        'usuario/camaras.html'
+    )
+
+def grabaciones(request):
+    return render(
+        request,
+        'usuario/grabaciones.html'
+    )
+
+def interfazrec(request):
+    return render(
+        request,
+        'usuario/interfazrec.html'
+    )
+
+def menu(request):
+    return render(
+        request,
+        'usuario/menu.html'
+    )
+
+def modificar(request):
+    return render(
+        request,
+        'usuario/modificarusuario.html'
+    )
+
+
+def listar(request):
+    return render(
+        request,
+        'usuario/listarUsuarios.html'
+    )
+
+def listarmov(request):
+    return render(
+        request,
+        'usuario/listarMovimiento.html'
+    )
+
+
+

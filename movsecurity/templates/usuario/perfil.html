@@ -1,12 +1,30 @@
 {% extends "base/index.html" %}
-
-
-{% block main %}
-<div class="container">
+<!--<div class="container">
     <section class="8">
         <h1>Bienvenido {{user.username}}</h1>
-        <a href="/menu/">Cerrar Sesión</a>
-        <a href="/auto/">Gestionar Autos</a>
+
+        <div class="card">
+            <h1>Nombre: {{user.username}}</h1>
+            <h1>Apellido: {{user.last_name}}</h1>
+        </div>
+        <a href="/cuenta/">Cerrar Sesión</a>
+        <a href="/auto/">Ir al Menú</a>
     </section>
-</div>
+</div>-->
+
+{% block main %}
+<div class="card border-success mb-3" style="max-width: 18rem;">
+    <div class="card-header bg-transparent border-success">Nombre Usuario</div>
+    <div class="card-body text-success">
+      <p class="card-text">Nombre: Nombre del Usuario</p>
+      <p class="card-text">Apellido: Apellido del Usuario</p>
+      <p class="card-text">Rut: Rut del Usuario</p>
+      <p class="card-text">Cargo: Cargo del Usuario</p>
+    </div>
+    <div class="card-footer bg-transparent border-success">
+        <button type="submit" class="btn btn-primary">Volver</button>
+        <button type="submit" class="btn btn-primary">Modificar</button>
+    </div>
+  </div>
+
 {% endblock main %}

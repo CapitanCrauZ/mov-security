@@ -7,12 +7,12 @@ class FormCreacionUsuario(UserCreationForm):
     class Meta:
         model = User
         fields = (
-            'username',
-            'email',
             'first_name',
             'last_name',
+            'username',            
             'password1',
-            'password2'
+            'password2',
+            'email',
         )
 
 class FormCreacionPerfil(forms.ModelForm):
