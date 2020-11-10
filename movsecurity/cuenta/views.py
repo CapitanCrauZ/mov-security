@@ -60,11 +60,11 @@ def salir(request):
 
 
 def perfil(request):
-    #if request.user.is_authenticated:
-    return render(
-        request,
-        'usuario/perfil.html'
-    )
+    if request.user.is_authenticated:
+        return render(
+            request,
+            'usuario/perfil.html'
+        )
     #return redirect('cuenta/')
 
 def camaras(request):

@@ -1,39 +1,46 @@
 {% extends "base/index.html" %}
 
 {% block main %}
-<div class="card text-center">
-    <div class="card-header">
-       Menú
-    </div>
-    <div class="card-body">
-        <div class="card" style="width: 18rem;">
+<div class="row bg-primary">
+    <div class="card text-center mt-5 mb-5 mx-auto">
+        <div class="card-header">
+            Menú
+        </div>
+        <div class="card-body">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">                        
+                        <a href="/cuenta/registro/"><input type="submit" class="btn btn-primary btn-block" value="Agregar Usuario"></a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/cuenta/eliminar/"><input type="submit" class="btn btn-primary btn-block" value="Eliminar Usuario"></a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/cuenta/listar/"><input type="submit" class="btn btn-primary btn-block" value="Listar Usuarios"></a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/cuenta/modificar/"><input type="submit" class="btn btn-primary btn-block" value="Modificar Usuario"></a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/cuenta/listarMovimiento/"><input type="submit" class="btn btn-primary btn-block" value="Listar Registro de Movimiento"></a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/cuenta/interfazrec/"><input type="submit" class="btn btn-primary btn-block" value="Grabaciones"></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    <div class="card-footer text-muted">
+        <div class="card">
             <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <button type="submit" class="btn btn-primary">Agregar Usuario</button>
-            </li>
-            <li class="list-group-item">
-                <button type="submit" class="btn btn-primary">Eliminar Usuario</button>
-            </li>
-            <li class="list-group-item">
-                <button type="submit" class="btn btn-primary">Listar Usuario</button>
-            </li>
-            <li class="list-group-item">
-                <button type="submit" class="btn btn-primary">Modificar Usuario</button>
-            </li>
-            <li class="list-group-item">
-                <button type="submit" class="btn btn-primary">Listar Registro de Movimiento</button>
-            </li>
-            <li class="list-group-item">
-                <button type="submit" class="btn btn-primary">Ver grabaciones</button>
-            </li>
-            <li class="list-group-item">
-                <button type="submit" class="btn btn-primary">Cerrar Sesión</button>
-            </li>
+                <li class="list-group-item">
+                    <a href="/cuenta"><input type="submit" class="btn btn-primary btn-block" value="Cerrar Sesión"></a>
+                </li>
             </ul>
         </div>
     </div>
-    <div class="card-footer text-muted">
-    </div>
-  </div>
+</div>
+</div>
 
 {% endblock main%}

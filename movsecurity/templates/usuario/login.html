@@ -6,12 +6,7 @@
     <div class="div_section_login">
         <div class="div_login">
 
-            <form action="" method="POST" class="formulario">
-                {% csrf_token %}
-                {{ formulario }}
-                <input type="submit" value="Entrar" class="btn_enviar">
-                <a href="registro/">Registrarse</a>
-            </form>
+           
 
         </div>
     </div>
@@ -21,28 +16,32 @@
 <!---->
 
 {% block main %}
-<div class="card text-center">
-    <div class="card-header">
-        Iniciar Sesión
-    </div>
-    <div class="card-body">
+<div class="row bg-primary">
+    
+    <section class="card col-sm-12 col-md-4 mx-auto mt-5 mb-5">
+        <article class="card-header">
+            <h5 class="card-title">
+                Registrarse
+            </h5>
+        </article>
         <form action="" method="POST" class="formulario">
             {% csrf_token %}
-            <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-primary">Registrarse</button>
-            <button type="submit" class="btn btn-primary">Entrar</button>
+            <article class="card-body">
+                
+                <div class="form-group">
+                    
+                    <label for="{{ campo.id_for_label}}">{{campo.label}}</label>
+
+                    {{campo}}
+                    {{ formulario.as_p }}
+
+                </div>  
+
+            </article>
+            <article class="card-footer">
+                <input type="submit" class="btn btn-primary btn-block" value="Entrar">
+            </article>
         </form>
-    </div>
-    <div class="card-footer text-muted">
-    </div>
-  </div>
- 
+    </section>
+</div>
 {% endblock main %}
