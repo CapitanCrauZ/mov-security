@@ -20,7 +20,7 @@ def registro(request):
             perfil.usuario = usuario
             perfil.save()
             messages.add_message(request, messages.INFO, 'Registrado Correctamente....')
-            return redirect('/cuenta/perfil/')
+            return redirect('/cuenta/registro/')
     context = {
         'formulario':formulario,
         'formulario2': formulario2
@@ -56,7 +56,7 @@ def iniciarSesion(request):
     #POST
 def salir(request):
     logout(request)
-    return redirect('menu/')
+    return redirect('/cuenta/')
 
 
 def perfil(request):
@@ -85,12 +85,6 @@ def interfazrec(request):
         'usuario/interfazrec.html'
     )
 
-def menu(request):
-    return render(
-        request,
-        'usuario/menu.html'
-    )
-
 def modificar(request):
     return render(
         request,
@@ -99,9 +93,16 @@ def modificar(request):
 
 
 def listar(request):
+    usuarios = User.objects.all()
+    context = {
+        'titulo':'Listar Usuarios',
+        'usuarios':usuarios
+    }
+    
     return render(
         request,
-        'usuario/listarUsuarios.html'
+        'usuario/listarUsuarios.html',
+        context
     )
 
 def listarmov(request):
