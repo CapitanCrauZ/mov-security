@@ -14,8 +14,8 @@
 
 {% block main %}
 <div class="row bg-primary">
-    
-    <section class="card col-sm-12 col-md-6 mx-auto mt-5 mb-5">
+
+    <section class="card col-sm-12 col-md-5 mx-auto mt-5 mb-5">
         <article class="card-header">
             <h5 class="card-title">
                 Perfil de {{user.username}}
@@ -23,15 +23,43 @@
         </article>
 
         {% csrf_token %}
-        <article class="card-body">
-            <h5> Nombre : {{user.first_name}} </h5>
-            <h5> Apellido : {{user.last_name}} </h5>
-            <h5> Correo : {{user.email}} </h5>
-            <a href="/cuenta/modificar/"><input type="submit" class="btn btn-primary btn-block" value="Modificar"></a>
-        </article>
-        <article class="card-footer">
-                <a href="/cuenta/"><input type="submit" class="btn btn-primary btn-block" value="Volver"></a>         
-        </article>
+        {% if user.is_superuser == True %}
+            <article class="card-body">
+                <h5> Moderador : {{user.username}} </h5>
+            </article>
+        {% else%}
+            <article class="card-body">
+                <h5> Nombre : {{user.first_name}} </h5>
+                <h5> Apellido : {{user.last_name}} </h5>
+                <h5> Correo : {{user.email}} </h5>
+
+            </article>
+        {% endif %}
+        {% if user.is_superuser == True %}
+
+            <article class="card-footer">
+                <a href="/cuenta/listarMovimiento"><input type="submit" class="btn btn-primary btn-block" value="Listar registros de movimientos"></a>
+            </article>
+            <article class="card-footer">
+                <a href="/cuenta/interfazrec/"><input type="submit" class="btn btn-primary btn-block" value="Ver Camaras"></a>
+            </article> 
+            <article class="card-footer">
+                <a href="/cuenta/menu"><input type="submit" class="btn btn-primary btn-block" value="Menú Administrativo"></a>
+            </article>
+            <article class="card-footer">
+                    <a href="{%url 'salir'%}"><input type="submit" class="btn btn-primary btn-block" value="Cerrar sesión"></a>
+            </article>
+        {% else %}
+            <article class="card-footer">
+                <a href="/cuenta/listarMovimiento"><input type="submit" class="btn btn-primary btn-block" value="Ver registros de movimientos"></a>
+            </article>
+            <article class="card-footer">
+                <a href="/cuenta/interfazrec/"><input type="submit" class="btn btn-primary btn-block" value="Ver Camaras"></a>
+            </article> 
+            <article class="card-footer">
+                    <a href="{%url 'salir'%}"><input type="submit" class="btn btn-primary btn-block" value="Cerrar sesión"></a>
+            </article>
+        {% endif %}
 
     </section>
 </div>

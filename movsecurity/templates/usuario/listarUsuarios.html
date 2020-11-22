@@ -1,32 +1,47 @@
 {% extends "base/index.html" %}
 
 {% block main %}
+  {% if usuarios %}
     <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Rut</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Correo</th>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Tipo</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Correo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for usuario in usuarios%}
+          <tr id="{{usuario.id}}">
+            <td>
+              {% if usuario.is_superuser == False %}
+                <h6>Guardia</h6>
+              {% else %}
+                <h6>Administrador</h6>
+              {%endif%}
+            </td>
+            
+            {% if usuario.is_superuser == True %}
+            <td>
+              {{usuario.username}}
+            </td> 
+            <td>
+              {{usuario.email}}
+            </td> 
+            {% else %}    
+              <td>
+                {{usuario.first_name}}
+                {{usuario.last_name}}
+              </td> 
+              <td>
+                {{usuario.email}}
+              </td>       
+            {% endif %}
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-      <a href="/cuenta/menu/"><input type="submit" class="btn btn-primary btn-block" value="Volver"></a>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+  <a href="/cuenta/menu/"><input type="submit" class="btn btn-primary btn-block" value="Volver"></a>
  
 {% endblock main%}

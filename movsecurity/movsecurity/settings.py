@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+from pymongo import MongoClient
 from pathlib import Path
 from os.path import join
 
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cuenta'
+    'cuenta',
+    'productos',
 ]
 
 MIDDLEWARE = [
@@ -85,6 +87,16 @@ DATABASES = {
         'PASSWORD':'1234',
         'HOST':'localhost',
         'PORT':'3306',
+    },
+    'noRelacional':{
+        'NAME':'movsecurity',
+        'ENGINE':'djongo',
+        #'ENGINE': 'django_mongodb_engine',
+        #'HOST':'localhost',
+        #'USER':'admin',
+        #'PASSWORD':'1234',
+        #'PORT':'3306',
+        
     }
 }
 
@@ -130,4 +142,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = join(BASE_DIR,'static','static_root')
 
 STATICFILES_DIRS = [join(BASE_DIR,'static')]
+
+
+DATABASE_ROUTERS = ['productos.routers.ConexionDjango',]
 

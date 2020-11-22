@@ -7,9 +7,14 @@
     <section class="card col-sm-10 col-md-4 mx-auto mt-5">
         <article class="card-header">
             <h5 class="card-title">
-                Iniciar Sesión
+                Registrar
             </h5>
         </article>
+        {%for message in messages%}
+            <div class="message alert alert-success">
+                {{message}}
+            </div>
+        {%endfor%}
         <form action="" method="POST" class="formulario">
             {% csrf_token %}
             <article class="card-body">  
@@ -22,9 +27,12 @@
                 {{ formulario2.as_p }}
             </article>
             <article class="card-footer">
-                <input type="submit" class="btn btn-primary btn-block" value="Registrar">
+                <a href="/cuenta/perfil/"><input type="submit" class="btn btn-primary btn-block" value="Registrar"></a>
             </article>
         </form>
+        <article class="card-footer">
+            <a href="/cuenta"><input type="submit" class="btn btn-primary btn-block" value="Volver"></a>
+        </article>
     </section>
 </div>
 

@@ -1,0 +1,59 @@
+{% extends "base/index.html" %}
+
+{% block main %}
+
+<table class="table">
+    <h1 class="title">Lista de Productos</h1>
+    {%for message in messages%}
+            <div class="message alert alert-success">
+                {{message}}
+            </div>
+        {%endfor%}
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                Id
+            </th>
+            <th scope="col">
+                Nombre
+            </th>
+            <th scope="col">
+                Descripcion
+            </th>
+            <th scope="col">
+                Cantidad
+            </th>
+            <th scope="col">
+            </th>
+            <th scope="col">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for producto in productos%}
+        <tr id="{{producto.id}}">
+            <td>
+                {{producto.id}}
+            </td>
+            <td>
+                {{producto.nombre}}
+            </td>
+            <td>
+                {{producto.descripcion}}
+            </td>
+            <td>
+                {{producto.cantidad}}
+            </td>
+            <td>
+                <a href="/productos/modificarProducto/{{producto.id}}" value="modificar"><input type="submit" value="Modificar" class="btn btn-warning"></a>
+            </td>
+            <td>
+                <a href="/productos/eliminarProducto/{{producto.id}}" value="eliminar"><input type="submit" value="Eliminar" class="btn btn-danger"></a>
+            </td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+<a href="/cuenta/menu/"><input type="submit" class="btn btn-primary btn-block" value="Volver"></a>
+
+{%endblock main%}
