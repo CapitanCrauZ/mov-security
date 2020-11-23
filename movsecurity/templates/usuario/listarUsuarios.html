@@ -8,6 +8,8 @@
           <th scope="col">Tipo</th>
           <th scope="col">Nombre</th>
           <th scope="col">Correo</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +30,9 @@
             <td>
               {{usuario.email}}
             </td> 
+            <td>
+              <h6>inmodificable</h6>
+            </td>
             {% else %}    
               <td>
                 {{usuario.first_name}}
@@ -36,6 +41,12 @@
               <td>
                 {{usuario.email}}
               </td>       
+              <td>
+                <a href="/cuenta/modificarUsuario/{{usuario.id}}"><input type="submit" value="Modificar" class="btn btn-warning"></a>
+              </td>
+              <td>
+                <a href="/cuenta/eliminarUsuario/{{usuario.id}}"><input type="submit" value="Eliminar" class="btn btn-danger"></a>
+              </td>
             {% endif %}
           </tr>
         {% endfor %}

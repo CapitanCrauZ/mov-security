@@ -117,5 +117,26 @@ def menu(request):
         'usuario/menu.html'
     )
 
+def modificarUsuario(request,id):
+    usuarioEncontrado = User.objects.get(pk= id)
+    formulario = FormCreacionUsuario(instance=usuarioEncontrado)
+    if request.method == 'POST':
+        formulario = FormCreacionUsuario(request.POST, instance=usuarioEncontrado)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect ('/cuenta/listar/')
+    context={
+        'formulario':formulario
+    }
+    return render(
+        request,
+        'usuario/modificarusuario.html',
+        context
+    )
 
+def eliminarUsuario(request,id):
+    usuarios = User.objects.get(pk=id)
+    usuarios.delete()
+    #messages.add_message(request, messages.INFO, 'Usuario Eliminado Correctamente....')
+    return redirect('/cuenta/listar/')
 
