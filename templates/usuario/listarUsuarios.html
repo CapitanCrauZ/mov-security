@@ -1,0 +1,39 @@
+{% extends "base/index.html" %}
+
+{% block main %}
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Tipo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Correo</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for usuario in usuarios%}
+          <tr id="{{usuario.id}}">
+            <td>
+              {% if usuario.is_superuser == False %}                        
+                <h6>Guardia</h6>
+              {% else %}
+                <h6>Administrador</h6>
+              {%endif%}
+            </td>
+            <td>
+              {% if usuario.is_superuser == True %}
+                {{usuario.username}}
+              {% else%}
+                {{usuario.first_name}}
+                {{usuario.last_name}}
+              {% endif %}
+            </td>
+            <td>
+              {{usuario.email}}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="/cuenta/perfil/"><input type="submit" class="btn btn-primary btn-block" value="Volver"></a>
+ 
+{% endblock main%}
