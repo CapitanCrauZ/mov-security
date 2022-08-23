@@ -1,6 +1,6 @@
 # Mov Security | Safety Web Application
 
-<img src="https://github.com/CapitanCrauZ/MOV-SECURITY/blob/master/media/img/front/cover.png" width="80%" height="80%">
+<img src="https://github.com/CapitanCrauZ/MOV-SECURITY/blob/master/media/img/front/cover.png" width="50%" height="50%">
 
 ### Index
 
