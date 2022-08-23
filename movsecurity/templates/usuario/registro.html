@@ -27,12 +27,18 @@
                 {{ formulario2.as_p }}
             </article>
             <article class="card-footer">
-                <a href="/cuenta/perfil/"><input type="submit" class="btn btn-primary btn-block" value="Registrar"></a>
+                <a href="/perfil/"><input type="submit" class="btn btn-primary btn-block" value="Registrar"></a>
             </article>
         </form>
+        {% if user.is_authenticated %}
         <article class="card-footer">
-            <a href="/cuenta"><input type="submit" class="btn btn-primary btn-block" value="Volver"></a>
+            <a href="/perfil/"><input type="submit" class="btn btn-primary btn-block" value="Volver"></a>
         </article>
+        {% else %}
+        <article class="card-footer">
+            <a href="/"><input type="submit" class="btn btn-primary btn-block" value="Volver"></a>
+        </article>
+        {% endif %}
     </section>
 </div>
 

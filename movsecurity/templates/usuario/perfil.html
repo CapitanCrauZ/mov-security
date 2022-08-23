@@ -38,23 +38,23 @@
         {% if user.is_superuser == True %}
 
             <article class="card-footer">
-                <a href="/cuenta/listarMovimiento"><input type="submit" class="btn btn-primary btn-block" value="Listar registros de movimientos"></a>
+                <a href="/listarMovimiento"><input type="submit" class="btn btn-primary btn-block" value="Listar registros de movimientos"></a>
             </article>
             <article class="card-footer">
-                <a href="/cuenta/interfazrec/"><input type="submit" class="btn btn-primary btn-block" value="Ver Camaras"></a>
+                <a href="/interfazrec/"><input type="submit" class="btn btn-primary btn-block" value="Ver Camaras"></a>
             </article> 
             <article class="card-footer">
-                <a href="/cuenta/menu"><input type="submit" class="btn btn-primary btn-block" value="Menú Administrativo"></a>
+                <a href="/menu"><input type="submit" class="btn btn-primary btn-block" value="Menú Administrativo"></a>
             </article>
             <article class="card-footer">
                     <a href="{%url 'salir'%}"><input type="submit" class="btn btn-primary btn-block" value="Cerrar sesión"></a>
             </article>
         {% else %}
             <article class="card-footer">
-                <a href="/cuenta/listarMovimiento"><input type="submit" class="btn btn-primary btn-block" value="Ver registros de movimientos"></a>
+                <a href="/listarMovimiento"><input type="submit" class="btn btn-primary btn-block" value="Ver registros de movimientos"></a>
             </article>
             <article class="card-footer">
-                <a href="/cuenta/interfazrec/"><input type="submit" class="btn btn-primary btn-block" value="Ver Camaras"></a>
+                <a href="/interfazrec/"><input type="submit" class="btn btn-primary btn-block" value="Ver Camaras"></a>
             </article> 
             <article class="card-footer">
                     <a href="{%url 'salir'%}"><input type="submit" class="btn btn-primary btn-block" value="Cerrar sesión"></a>

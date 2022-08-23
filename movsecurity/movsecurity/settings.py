@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pymongo import MongoClient
+# from pymongo import MongoClient
 from pathlib import Path
 from os.path import join
 
@@ -81,21 +81,21 @@ WSGI_APPLICATION = 'movsecurity.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'movsecurity',
-        'USER':'root',
-        'PASSWORD':'1234',
-        'HOST':'localhost',
-        'PORT':'3306',
-    },
-    'noRelacional':{
-        'NAME':'movsecurity',
-        'ENGINE':'djongo',
-        #'ENGINE': 'django_mongodb_engine',
-        #'HOST':'localhost',
-        #'USER':'admin',
-        #'PASSWORD':'1234',
-        #'PORT':'3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    #     'USER':'root',
+    #     'PASSWORD':'1234',
+    #     'HOST':'localhost',
+    #     'PORT':'3306',
+    # },
+    # 'noRelacional':{
+    #     'NAME':'movsecurity',
+    #     'ENGINE':'djongo',
+    #     #'ENGINE': 'django_mongodb_engine',
+    #     #'HOST':'localhost',
+    #     #'USER':'admin',
+    #     #'PASSWORD':'1234',
+    #     #'PORT':'3306',
         
     }
 }
